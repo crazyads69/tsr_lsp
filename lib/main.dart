@@ -18,8 +18,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
       title: 'Tensoract List Port Server',
       theme: ThemeData(
+        applyElevationOverlayColor: true,
+        fontFamily: "Roboto",
+        useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
       home: const SplashScreen(),

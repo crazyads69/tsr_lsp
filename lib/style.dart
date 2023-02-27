@@ -8,6 +8,8 @@ Color babyblueColor = const Color(0xFF86E5FF);
 //Logo & image constants
 String LogoTSR = "assets/image/logo_tsr.svg";
 String LogoTSR_precompile = "image/logo_tsr.svg.vec";
+String LogoTSR_notext = "assets/image/logo_tsr_no_text.svg";
+String LogoTSR_notext_precompile = "image/logo_tsr_no_text.svg.vec";
 
 //Typography white constants
 TextStyle boldMobileTextStyle = const TextStyle(
@@ -76,6 +78,6 @@ TextStyle mediumMobileTextStylebl = const TextStyle(
     color: Colors.black);
 TextStyle mediumPCTextStylebl = const TextStyle(
     fontFamily: "Roboto",
-    fontSize: 16,
+    fontSize: 30,
     fontStyle: FontStyle.normal,
     color: Colors.black);

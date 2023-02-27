@@ -1,0 +1,32 @@
+{
+    "list": [
+        {
+            "name": "sshd",
+            "port": "22",
+            "protocol": "tcp",
+            "alias": "sshd",
+            "description": ""
+        },
+        {
+            "name": "docker",
+            "port": "6006",
+            "protocol": "tcp",
+            "alias": "docker",
+            "description": "Virtual container"
+        },
+        {
+            "name": "fast-api",
+            "port": "8080",
+            "protocol": "tcp",
+            "alias": "python fast-api",
+            "description": ""
+        },
+        {
+            "name": "sshd",
+            "port": "22",
+            "protocol": "tcp",
+            "alias": "sshd",
+            "description": ""
+        }
+    ]
+}

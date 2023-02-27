@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:tsr_lsp/style.dart';
+import 'package:tsr_lsp/home_screen.dart';
+import 'package:tsr_lsp/port_model.dart';
+import 'dart:convert';
+import 'dart:io';
+import 'package:flutter/services.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -9,9 +18,32 @@ class SplashScreen extends StatefulWidget {
 }
 
 class SplashScreenState extends State<SplashScreen> {
+  List _items = [];
+  List<UsagedPort> _datas = [];
+// Fetch content from the json file
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/mock_port_data.json');
+    final data = await json.decode(response);
+    setState(() {
+      _items = data["list"];
+    });
+    _items.forEach((element) {
+      _datas.add(UsagedPort.fromJson(element));
+    });
+    /* for (int i = 0; i < _datas.length; i++) {
+      print(_datas[i].name);
+      print(_datas[i].port);
+      print(_datas[i].protocol);
+      print(_datas[i].alias);
+      print(_datas[i].description);
+    } */
+  }
+
   @override
   void initState() {
     super.initState();
+    readJson();
     new Timer(new Duration(milliseconds: 3000), () {
       // set your desired delay time here
       Navigator.of(context).pushReplacement(
