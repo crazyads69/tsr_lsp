@@ -1,0 +1,189 @@
+[
+    {
+        "command": "systemd-n",
+        "pid": 443,
+        "user": "systemd-network",
+        "fd": "15u",
+        "type": "IPv4",
+        "device": "770034",
+        "size_off": 0,
+        "node": null,
+        "name": "10.148.0.3:68"
+    },
+    {
+        "command": "systemd-r",
+        "pid": 445,
+        "user": "systemd-resolve",
+        "fd": "13u",
+        "type": "IPv4",
+        "device": "15642",
+        "size_off": 0,
+        "node": null,
+        "name": "127.0.0.53:53"
+    },
+    {
+        "command": "systemd-r",
+        "pid": 445,
+        "user": "systemd-resolve",
+        "fd": "14u",
+        "type": "IPv4",
+        "device": "15643",
+        "size_off": 0,
+        "node": null,
+        "name": "127.0.0.53:53 (LISTEN)"
+    },
+    {
+        "command": "google_os",
+        "pid": 579,
+        "user": "root",
+        "fd": "3u",
+        "type": "IPv4",
+        "device": "16865",
+        "size_off": 0,
+        "node": null,
+        "name": "10.148.0.3:51160->169.254.169.254:80 (ESTABLISHED)"
+    },
+    {
+        "command": "google_os",
+        "pid": 579,
+        "user": "root",
+        "fd": "8u",
+        "type": "IPv4",
+        "device": "771326",
+        "size_off": 0,
+        "node": null,
+        "name": "10.148.0.3:56450->216.239.38.174:443 (ESTABLISHED)"
+    },
+    {
+        "command": "google_gu",
+        "pid": 748,
+        "user": "root",
+        "fd": "6u",
+        "type": "IPv4",
+        "device": "770731",
+        "size_off": 0,
+        "node": null,
+        "name": "10.148.0.3:43750->142.251.12.95:443 (ESTABLISHED)"
+    },
+    {
+        "command": "google_gu",
+        "pid": 748,
+        "user": "root",
+        "fd": "20u",
+        "type": "IPv4",
+        "device": "17912",
+        "size_off": 0,
+        "node": null,
+        "name": "10.148.0.3:38956->169.254.169.254:80 (ESTABLISHED)"
+    },
+    {
+        "command": "chronyd",
+        "pid": 1397,
+        "user": "_chrony",
+        "fd": "5u",
+        "type": "IPv4",
+        "device": "18369",
+        "size_off": 0,
+        "node": null,
+        "name": "127.0.0.1:323"
+    },
+    {
+        "command": "chronyd",
+        "pid": 1397,
+        "user": "_chrony",
+        "fd": "6u",
+        "type": "IPv6",
+        "device": "18370",
+        "size_off": 0,
+        "node": null,
+        "name": "[::1]:323"
+    },
+    {
+        "command": "sshd",
+        "pid": 6936,
+        "user": "root",
+        "fd": "3u",
+        "type": "IPv4",
+        "device": "28343",
+        "size_off": 0,
+        "node": null,
+        "name": "*:22 (LISTEN)"
+    },
+    {
+        "command": "sshd",
+        "pid": 6936,
+        "user": "root",
+        "fd": "4u",
+        "type": "IPv6",
+        "device": "28345",
+        "size_off": 0,
+        "node": null,
+        "name": "*:22 (LISTEN)"
+    },
+    {
+        "command": "docker-pr",
+        "pid": 48944,
+        "user": "root",
+        "fd": "4u",
+        "type": "IPv4",
+        "device": "168011",
+        "size_off": 0,
+        "node": null,
+        "name": "*:8000 (LISTEN)"
+    },
+    {
+        "command": "docker-pr",
+        "pid": 48952,
+        "user": "root",
+        "fd": "4u",
+        "type": "IPv6",
+        "device": "167752",
+        "size_off": 0,
+        "node": null,
+        "name": "*:8000 (LISTEN)"
+    },
+    {
+        "command": "sshd",
+        "pid": 108794,
+        "user": "root",
+        "fd": "4u",
+        "type": "IPv4",
+        "device": "769012",
+        "size_off": 0,
+        "node": null,
+        "name": "10.148.0.3:22->58.186.29.235:43631 (ESTABLISHED)"
+    },
+    {
+        "command": "sshd",
+        "pid": 108880,
+        "user": "trilm",
+        "fd": "4u",
+        "type": "IPv4",
+        "device": "769012",
+        "size_off": 0,
+        "node": null,
+        "name": "10.148.0.3:22->58.186.29.235:43631 (ESTABLISHED)"
+    },
+    {
+        "command": "sshd",
+        "pid": 108936,
+        "user": "root",
+        "fd": "4u",
+        "type": "IPv4",
+        "device": "771337",
+        "size_off": 0,
+        "node": null,
+        "name": "10.148.0.3:22->171.250.167.215:7437 (ESTABLISHED)"
+    },
+    {
+        "command": "sshd",
+        "pid": 109004,
+        "user": "thunh",
+        "fd": "4u",
+        "type": "IPv4",
+        "device": "771337",
+        "size_off": 0,
+        "node": null,
+        "name": "10.148.0.3:22->171.250.167.215:7437 (ESTABLISHED)"
+    }
+]

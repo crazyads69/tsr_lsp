@@ -17,20 +17,22 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => SplashScreenState();
 }
 
+List items = [];
+List<UsagedPort> datas = [];
+
 class SplashScreenState extends State<SplashScreen> {
-  List _items = [];
-  List<UsagedPort> _datas = [];
 // Fetch content from the json file
   Future<void> readJson() async {
     final String response =
         await rootBundle.loadString('assets/mock_port_data.json');
     final data = await json.decode(response);
     setState(() {
-      _items = data["list"];
+      items = data["list"];
     });
-    _items.forEach((element) {
-      _datas.add(UsagedPort.fromJson(element));
+    items.forEach((element) {
+      datas.add(UsagedPort.fromJson(element));
     });
+    datas.sort(((a, b) => a.port.compareTo(b.port)));
     /* for (int i = 0; i < _datas.length; i++) {
       print(_datas[i].name);
       print(_datas[i].port);

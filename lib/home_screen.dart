@@ -6,6 +6,7 @@ import 'package:tsr_lsp/style.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 import 'package:tsr_lsp/splash_screen.dart';
+import 'package:data_table_2/data_table_2.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,6 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             GestureDetector(
               onTap: () {
+                setState(() {
+                  items = [];
+                  datas = [];
+                });
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(builder: (context) => new SplashScreen()),
@@ -38,6 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
             GestureDetector(
               child: Text("TENSORACT", style: boldPCTextStyle),
               onTap: () => {
+                setState(() {
+                  items = [];
+                  datas = [];
+                }),
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(builder: (context) => new SplashScreen()),
@@ -47,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         elevation: 1.0,
-        backgroundColor: lightblueColor,
+        backgroundColor: Colors.black,
       ),
       body: const BodyScreen(),
     );
@@ -72,11 +81,49 @@ class _BodyScreenState extends State<BodyScreen> {
       width: double.maxFinite,
       height: double.maxFinite,
       child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.vertical,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Danh sách port đã sử dụng: ", style: mediumPCTextStylebl),
+            SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: DataTable2(
+                  minWidth: 600,
+                    columns: [
+                      DataColumn2(
+                          label: Text("Port", style: boldPCTextStylebl)),
+                      DataColumn2(
+                          label: Text("Service", style: boldPCTextStylebl)),
+                      DataColumn2(
+                          label: Text("Protocol", style: boldPCTextStylebl)),
+                      DataColumn2(
+                          label: Text("Command", style: boldPCTextStylebl)),
+                      DataColumn2(
+                          label: Text("Status", style: boldPCTextStylebl)),
+                    ],
+                    rows: List<DataRow>.generate(
+                        datas.length,
+                        (index) => DataRow(
+                              cells: [
+                                DataCell(Center(
+                                    child: Text(datas[index].port,
+                                        style: mediumPCTextStylebl))),
+                                DataCell(Center(
+                                    child: Text(datas[index].name,
+                                        style: mediumPCTextStylebl))),
+                                DataCell(Center(
+                                    child: Text(datas[index].protocol,
+                                        style: mediumPCTextStylebl))),
+                                DataCell(Center(
+                                    child: Text(datas[index].alias,
+                                        style: mediumPCTextStylebl))),
+                                DataCell(Center(
+                                    child: Text("USED",
+                                        style: mediumPCTextStylebl)))
+                              ],
+                            )))),
           ],
         ),
       ),
