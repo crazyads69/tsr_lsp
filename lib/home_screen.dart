@@ -85,23 +85,32 @@ class _BodyScreenState extends State<BodyScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Danh sách port đã sử dụng: ", style: mediumPCTextStylebl),
+            Text("List Port in-used: ", style: mediumPCTextStylebl),
+            Divider(height: 10, color: Colors.black),
             SizedBox(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: DataTable2(
-                  minWidth: 600,
+                    minWidth: 600,
                     columns: [
                       DataColumn2(
-                          label: Text("Port", style: boldPCTextStylebl)),
+                          label: Center(
+                              child: Text("Port", style: boldPCTextStylebl))),
                       DataColumn2(
-                          label: Text("Service", style: boldPCTextStylebl)),
+                          label: Center(
+                              child:
+                                  Text("Service", style: boldPCTextStylebl))),
                       DataColumn2(
-                          label: Text("Protocol", style: boldPCTextStylebl)),
+                          label: Center(
+                              child:
+                                  Text("Protocol", style: boldPCTextStylebl))),
                       DataColumn2(
-                          label: Text("Command", style: boldPCTextStylebl)),
+                          label: Center(
+                              child:
+                                  Text("Command", style: boldPCTextStylebl))),
                       DataColumn2(
-                          label: Text("Status", style: boldPCTextStylebl)),
+                          label: Center(
+                              child: Text("Status", style: boldPCTextStylebl))),
                     ],
                     rows: List<DataRow>.generate(
                         datas.length,
