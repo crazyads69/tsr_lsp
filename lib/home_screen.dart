@@ -85,7 +85,7 @@ class _BodyScreenState extends State<BodyScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("List Port in-used: ", style: mediumPCTextStylebl),
+            Text("Port In-used List: ", style: mediumPCTextStylebl),
             Divider(height: 10, color: Colors.black),
             SizedBox(
                 height: MediaQuery.of(context).size.height,
@@ -95,7 +95,12 @@ class _BodyScreenState extends State<BodyScreen> {
                     columns: [
                       DataColumn2(
                           label: Center(
-                              child: Text("Port", style: boldPCTextStylebl))),
+                              child: Text("Local Port",
+                                  style: boldPCTextStylebl))),
+                      DataColumn2(
+                          label: Center(
+                              child: Text("Foreign Port",
+                                  style: boldPCTextStylebl))),
                       DataColumn2(
                           label: Center(
                               child:
@@ -106,10 +111,6 @@ class _BodyScreenState extends State<BodyScreen> {
                                   Text("Protocol", style: boldPCTextStylebl))),
                       DataColumn2(
                           label: Center(
-                              child:
-                                  Text("Command", style: boldPCTextStylebl))),
-                      DataColumn2(
-                          label: Center(
                               child: Text("Status", style: boldPCTextStylebl))),
                     ],
                     rows: List<DataRow>.generate(
@@ -117,19 +118,19 @@ class _BodyScreenState extends State<BodyScreen> {
                         (index) => DataRow(
                               cells: [
                                 DataCell(Center(
-                                    child: Text(datas[index].port,
+                                    child: Text(datas[index].local_port,
                                         style: mediumPCTextStylebl))),
                                 DataCell(Center(
-                                    child: Text(datas[index].name,
+                                    child: Text(datas[index].foreign_port,
                                         style: mediumPCTextStylebl))),
                                 DataCell(Center(
-                                    child: Text(datas[index].protocol,
+                                    child: Text(datas[index].program_name,
                                         style: mediumPCTextStylebl))),
                                 DataCell(Center(
-                                    child: Text(datas[index].alias,
+                                    child: Text(datas[index].proto,
                                         style: mediumPCTextStylebl))),
                                 DataCell(Center(
-                                    child: Text("USED",
+                                    child: Text(datas[index].state,
                                         style: mediumPCTextStylebl)))
                               ],
                             )))),

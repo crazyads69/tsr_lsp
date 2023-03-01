@@ -5,18 +5,18 @@ import 'dart:io';
 
 class UsagedPort {
   UsagedPort({
-    required this.name,
-    required this.port,
-    required this.protocol,
-    required this.alias,
-    required this.description,
+    required this.program_name,
+    required this.local_port,
+    required this.foreign_port,
+    required this.proto,
+    required this.state,
   });
 
-  final String name;
-  final String port;
-  final String protocol;
-  final String alias;
-  final String description;
+  final String program_name;
+  final String local_port;
+  final String foreign_port;
+  String proto;
+  final String state;
 
   factory UsagedPort.fromRawJson(String str) =>
       UsagedPort.fromJson(json.decode(str));
@@ -24,20 +24,18 @@ class UsagedPort {
   String toRawJson() => json.encode(toJson());
 
   factory UsagedPort.fromJson(Map<String, dynamic> json) => UsagedPort(
-        name: json["name"],
-        port: json["port"],
-        protocol: json["protocol"],
-        alias: json["alias"],
-        description: json["description"],
+        program_name: json["program_name"],
+        local_port: json["local_port"],
+        foreign_port: json["foreign_port"],
+        proto: json["proto"],
+        state: json["state"],
       );
 
   Map<String, dynamic> toJson() => {
-        "name": name,
-        "port": port,
-        "protocol": protocol,
-        "alias": alias,
-        "description": description,
+        "program_name": program_name,
+        "local_port": local_port,
+        "foreign_port": foreign_port,
+        "proto": proto,
+        "state": state,
       };
 }
-
-

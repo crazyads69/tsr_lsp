@@ -27,19 +27,13 @@ class SplashScreenState extends State<SplashScreen> {
         await rootBundle.loadString('assets/mock_port_data.json');
     final data = await json.decode(response);
     setState(() {
-      items = data["list"];
+      items = data;
     });
     items.forEach((element) {
       datas.add(UsagedPort.fromJson(element));
     });
-    datas.sort(((a, b) => a.port.compareTo(b.port)));
-    /* for (int i = 0; i < _datas.length; i++) {
-      print(_datas[i].name);
-      print(_datas[i].port);
-      print(_datas[i].protocol);
-      print(_datas[i].alias);
-      print(_datas[i].description);
-    } */
+
+    datas.sort((a, b) => a.local_port.compareTo(b.local_port));
   }
 
   @override
@@ -64,10 +58,13 @@ class SplashScreenState extends State<SplashScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SvgPicture(
-            AssetBytesLoader(LogoTSR_precompile),
-            height: MediaQuery.of(context).size.height * 40 / 100,
-            width: MediaQuery.of(context).size.width * 60 / 100,
+          Center(
+            child: SvgPicture.asset(
+              LogoTSR_notext,
+              color: Colors.black,
+              height: MediaQuery.of(context).size.height * 50 / 100,
+              width: MediaQuery.of(context).size.width * 60 / 100,
+            ),
           ),
           Text("TENSORACT", style: boldPCTextStylebl),
           Padding(
