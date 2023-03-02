@@ -11,9 +11,12 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:dio/dio.dart';
 
-final dio=new Dio();
-String url = "http";
+final dio = new Dio();
+String url = "http://35.198.231.19:12000/send_json";
 Response response = Response(requestOptions: RequestOptions());
+String responseBody = "";
 Future getHttp() async {
-  response = await dio.get(url);
+  response =
+      await dio.get(url, options: Options(sendTimeout: Duration(seconds: 10)));
 }
+

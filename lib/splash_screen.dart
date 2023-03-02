@@ -43,7 +43,7 @@ class SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    new Timer(new Duration(milliseconds: 3000), () {
+    new Timer(new Duration(seconds: 10), () {
       if (response.statusCode == 200) {
         readJson();
         // set your desired delay time here
@@ -58,6 +58,9 @@ class SplashScreenState extends State<SplashScreen> {
 
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+      ),
       margin: EdgeInsets.only(
           top: MediaQuery.of(context).size.height * 20 / 100,
           left: MediaQuery.of(context).size.width * 10 / 100,

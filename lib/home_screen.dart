@@ -34,10 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     MaterialPageRoute(builder: (context) => new SplashScreen()),
                     (Route<dynamic> route) => false);
               },
-              child: SvgPicture(
-                AssetBytesLoader(LogoTSR_notext_precompile),
+              child: SvgPicture.asset(
+                LogoTSR_notext,
                 width: MediaQuery.of(context).size.width * 10 / 100,
                 height: MediaQuery.of(context).size.height * 10 / 100,
+                color: Colors.white,
               ),
             ),
             GestureDetector(

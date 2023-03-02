@@ -12,11 +12,11 @@ class UsagedPort {
     required this.state,
   });
 
-  final String program_name;
-  final String local_port;
-  final String foreign_port;
-  String proto;
-  final String state;
+  String program_name = " ";
+  String local_port = " ";
+  String foreign_port = " ";
+  String proto = " ";
+  String state = " ";
 
   factory UsagedPort.fromRawJson(String str) =>
       UsagedPort.fromJson(json.decode(str));
@@ -24,11 +24,11 @@ class UsagedPort {
   String toRawJson() => json.encode(toJson());
 
   factory UsagedPort.fromJson(Map<String, dynamic> json) => UsagedPort(
-        program_name: json["program_name"],
-        local_port: json["local_port"],
-        foreign_port: json["foreign_port"],
-        proto: json["proto"],
-        state: json["state"],
+        program_name: json["program_name"] ?? "USED",
+        local_port: json["local_port"] ?? "USED",
+        foreign_port: json["foreign_port"] ?? "USED",
+        proto: json["proto"] ?? "USED",
+        state: json["state"] ?? "USED",
       );
 
   Map<String, dynamic> toJson() => {
