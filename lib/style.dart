@@ -10,6 +10,7 @@ String LogoTSR = "assets/image/logo_tsr.svg";
 String LogoTSR_precompile = "image/logo_tsr.svg.vec";
 String LogoTSR_notext = "assets/image/logo_tsr_no_text.svg";
 String LogoTSR_notext_precompile = "image/logo_tsr_no_text.svg.vec";
+String NotFound = "assets/image/404.jpg";
 
 //Typography white constants
 TextStyle boldMobileTextStyle = const TextStyle(

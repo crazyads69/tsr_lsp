@@ -6,9 +6,12 @@ import 'package:tsr_lsp/style.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 import 'package:tsr_lsp/splash_screen.dart';
+import 'package:tsr_lsp/dio_get.dart';
+import 'package:dio/dio.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
+  getHttp();
 }
 
 class MyApp extends StatelessWidget {

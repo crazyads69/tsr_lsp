@@ -9,6 +9,9 @@ import 'package:tsr_lsp/port_model.dart';
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/services.dart';
+import 'package:dio/dio.dart';
+import 'package:tsr_lsp/dio_get.dart';
+import 'package:tsr_lsp/error_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,9 +26,9 @@ List<UsagedPort> datas = [];
 class SplashScreenState extends State<SplashScreen> {
 // Fetch content from the json file
   Future<void> readJson() async {
-    final String response =
-        await rootBundle.loadString('assets/mock_port_data.json');
-    final data = await json.decode(response);
+    /* final String response =
+        await rootBundle.loadString('assets/mock_port_data.json');*/
+    final data = await json.decode(response.data);
     setState(() {
       items = data;
     });
@@ -39,11 +42,17 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    readJson();
+
     new Timer(new Duration(milliseconds: 3000), () {
-      // set your desired delay time here
-      Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (context) => new HomeScreen()));
+      if (response.statusCode == 200) {
+        readJson();
+        // set your desired delay time here
+        Navigator.of(context).pushReplacement(
+            new MaterialPageRoute(builder: (context) => new HomeScreen()));
+      } else {
+        Navigator.of(context).pushReplacement(
+            new MaterialPageRoute(builder: (context) => new ErrorScreen()));
+      }
     });
   }
 
