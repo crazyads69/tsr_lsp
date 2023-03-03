@@ -7,6 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 import 'package:tsr_lsp/splash_screen.dart';
 import 'package:data_table_2/data_table_2.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -42,7 +43,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             GestureDetector(
-              child: Text("TENSORACT", style: boldPCTextStyle),
+              child: AutoSizeText(
+                "TENSORACT",
+                style: boldPCTextStyle,
+                minFontSize: 10,
+                maxLines: 1,
+              ),
               onTap: () => {
                 setState(() {
                   items = [];
@@ -86,53 +92,99 @@ class _BodyScreenState extends State<BodyScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Port In-used List: ", style: mediumPCTextStylebl),
+            AutoSizeText(
+              "Port In-used List: ",
+              style: mediumPCTextStylebl,
+              maxLines: 1,
+              minFontSize: 10,
+            ),
             Divider(height: 10, color: Colors.black),
             SizedBox(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: DataTable2(
-                    minWidth: 600,
+                    sortAscending: true,
+                    border: TableBorder.all(color: Colors.black, width: 1.0),
+                    minWidth: 375,
                     columns: [
                       DataColumn2(
                           label: Center(
-                              child: Text("Local Port",
-                                  style: boldPCTextStylebl))),
+                              child: AutoSizeText(
+                        "Local Port",
+                        style: boldPCTextStylebl,
+                        minFontSize: 10,
+                        maxLines: 1,
+                      ))),
                       DataColumn2(
                           label: Center(
-                              child: Text("Foreign Port",
-                                  style: boldPCTextStylebl))),
+                              child: AutoSizeText(
+                        "Foreign Port",
+                        style: boldPCTextStylebl,
+                        minFontSize: 10,
+                        maxLines: 1,
+                      ))),
                       DataColumn2(
                           label: Center(
-                              child:
-                                  Text("Service", style: boldPCTextStylebl))),
+                              child: AutoSizeText(
+                        "Service",
+                        style: boldPCTextStylebl,
+                        maxLines: 1,
+                        minFontSize: 10,
+                      ))),
                       DataColumn2(
                           label: Center(
-                              child:
-                                  Text("Protocol", style: boldPCTextStylebl))),
+                              child: AutoSizeText("Protocol",
+                                  style: boldPCTextStylebl,
+                                  maxLines: 1,
+                                  minFontSize: 10))),
                       DataColumn2(
                           label: Center(
-                              child: Text("Status", style: boldPCTextStylebl))),
+                              child: AutoSizeText(
+                        "Status",
+                        style: boldPCTextStylebl,
+                        minFontSize: 10,
+                        maxLines: 1,
+                      ))),
                     ],
                     rows: List<DataRow>.generate(
                         datas.length,
                         (index) => DataRow(
                               cells: [
                                 DataCell(Center(
-                                    child: Text(datas[index].local_port,
-                                        style: mediumPCTextStylebl))),
+                                    child: AutoSizeText(
+                                  datas[index].local_port,
+                                  style: mediumPCTextStylebl,
+                                  minFontSize: 10,
+                                  maxLines: 1,
+                                ))),
                                 DataCell(Center(
-                                    child: Text(datas[index].foreign_port,
-                                        style: mediumPCTextStylebl))),
+                                    child: AutoSizeText(
+                                  datas[index].foreign_port,
+                                  style: mediumPCTextStylebl,
+                                  minFontSize: 10,
+                                  maxLines: 1,
+                                ))),
                                 DataCell(Center(
-                                    child: Text(datas[index].program_name,
-                                        style: mediumPCTextStylebl))),
+                                    child: AutoSizeText(
+                                  datas[index].program_name,
+                                  style: mediumPCTextStylebl,
+                                  minFontSize: 10,
+                                  maxLines: 1,
+                                ))),
                                 DataCell(Center(
-                                    child: Text(datas[index].proto,
-                                        style: mediumPCTextStylebl))),
+                                    child: AutoSizeText(
+                                  datas[index].proto,
+                                  style: mediumPCTextStylebl,
+                                  minFontSize: 10,
+                                  maxLines: 1,
+                                ))),
                                 DataCell(Center(
-                                    child: Text(datas[index].state,
-                                        style: mediumPCTextStylebl)))
+                                    child: AutoSizeText(
+                                  datas[index].state,
+                                  style: mediumPCTextStylebl,
+                                  minFontSize: 10,
+                                  maxLines: 1,
+                                )))
                               ],
                             )))),
           ],

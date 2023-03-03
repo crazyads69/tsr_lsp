@@ -12,6 +12,7 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:dio/dio.dart';
 import 'package:tsr_lsp/dio_get.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class ErrorScreen extends StatefulWidget {
   const ErrorScreen({super.key});
@@ -48,7 +49,12 @@ class _ErrorScreenState extends State<ErrorScreen> {
               ),
             ),
             GestureDetector(
-              child: Text("TENSORACT", style: boldPCTextStyle),
+              child: AutoSizeText(
+                "TENSORACT",
+                style: boldPCTextStyle,
+                minFontSize: 10,
+                maxLines: 1,
+              ),
               onTap: () => {
                 setState(() {
                   items = [];

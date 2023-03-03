@@ -12,6 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:dio/dio.dart';
 import 'package:tsr_lsp/dio_get.dart';
 import 'package:tsr_lsp/error_screen.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -58,6 +59,8 @@ class SplashScreenState extends State<SplashScreen> {
 
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.white,
       ),
@@ -65,8 +68,6 @@ class SplashScreenState extends State<SplashScreen> {
           top: MediaQuery.of(context).size.height * 20 / 100,
           left: MediaQuery.of(context).size.width * 10 / 100,
           right: MediaQuery.of(context).size.width * 10 / 100),
-      width: double.maxFinite,
-      height: double.maxFinite,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -78,17 +79,19 @@ class SplashScreenState extends State<SplashScreen> {
               width: MediaQuery.of(context).size.width * 60 / 100,
             ),
           ),
-          Text("TENSORACT", style: boldPCTextStylebl),
+          Center(child: AutoSizeText("TENSORACT", style: boldPCTextStylebl,minFontSize: 12,maxLines: 1,)),
           Padding(
             padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).size.height * 10 / 100),
           ),
-          const SpinKitWave(
-            type: SpinKitWaveType.start,
-            itemCount: 5,
-            color: Colors.black,
-            size: 60,
-            duration: const Duration(milliseconds: 3000),
+          Center(
+            child: const SpinKitWave(
+              type: SpinKitWaveType.start,
+              itemCount: 5,
+              color: Colors.black,
+              size: 60,
+              duration: const Duration(milliseconds: 3000),
+            ),
           )
         ],
       ),
