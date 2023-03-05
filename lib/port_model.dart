@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'dart:convert';
-import 'dart:io';
 
 class UsagedPort {
   UsagedPort({
@@ -24,10 +21,10 @@ class UsagedPort {
   String toRawJson() => json.encode(toJson());
 
   factory UsagedPort.fromJson(Map<String, dynamic> json) => UsagedPort(
-        program_name: json["program_name"] ?? "USED",
-        local_port: json["local_port"] ?? "USED",
-        foreign_port: json["foreign_port"] ?? "USED",
-        proto: json["proto"] ?? "USED",
+        program_name: json["program_name"] ?? "UNKNOWN",
+        local_port: json["local_port"] ?? "*",
+        foreign_port: json["foreign_port"] ?? "*",
+        proto: json["proto"] ?? "none",
         state: json["state"] ?? "USED",
       );
 

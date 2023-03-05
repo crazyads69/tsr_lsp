@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'dart:async';
-import 'package:tsr_lsp/home_screen.dart';
 import 'package:tsr_lsp/style.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:vector_graphics/vector_graphics.dart';
 import 'package:tsr_lsp/splash_screen.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -32,7 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 });
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => new SplashScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const SplashScreen()),
                     (Route<dynamic> route) => false);
               },
               child: SvgPicture.asset(
@@ -56,7 +53,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 }),
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => new SplashScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const SplashScreen()),
                     (Route<dynamic> route) => false),
               },
             )
@@ -98,7 +96,6 @@ class _BodyScreenState extends State<BodyScreen> {
               maxLines: 1,
               minFontSize: 10,
             ),
-            Divider(height: 10, color: Colors.black),
             SizedBox(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,

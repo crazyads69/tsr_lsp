@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
+
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:vector_graphics/vector_graphics.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+
 import 'package:tsr_lsp/style.dart';
-import 'package:tsr_lsp/home_screen.dart';
-import 'package:tsr_lsp/port_model.dart';
+
 import 'package:tsr_lsp/splash_screen.dart';
-import 'dart:convert';
-import 'dart:io';
-import 'package:flutter/services.dart';
-import 'package:dio/dio.dart';
-import 'package:tsr_lsp/dio_get.dart';
+
 import 'package:auto_size_text/auto_size_text.dart';
 
 class ErrorScreen extends StatefulWidget {
@@ -38,7 +32,8 @@ class _ErrorScreenState extends State<ErrorScreen> {
                 });
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => new SplashScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const SplashScreen()),
                     (Route<dynamic> route) => false);
               },
               child: SvgPicture.asset(
@@ -62,7 +57,8 @@ class _ErrorScreenState extends State<ErrorScreen> {
                 }),
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => new SplashScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const SplashScreen()),
                     (Route<dynamic> route) => false),
               },
             )

@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:vector_graphics/vector_graphics.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:tsr_lsp/style.dart';
 import 'package:tsr_lsp/home_screen.dart';
 import 'package:tsr_lsp/port_model.dart';
 import 'dart:convert';
-import 'dart:io';
-import 'package:flutter/services.dart';
-import 'package:dio/dio.dart';
 import 'package:tsr_lsp/dio_get.dart';
 import 'package:tsr_lsp/error_screen.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -44,56 +40,66 @@ class SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    new Timer(new Duration(seconds: 10), () {
+    Timer(const Duration(seconds: 3), () {
       if (response.statusCode == 200) {
         readJson();
         // set your desired delay time here
         Navigator.of(context).pushReplacement(
-            new MaterialPageRoute(builder: (context) => new HomeScreen()));
+            MaterialPageRoute(builder: (context) => const HomeScreen()));
       } else {
         Navigator.of(context).pushReplacement(
-            new MaterialPageRoute(builder: (context) => new ErrorScreen()));
+            MaterialPageRoute(builder: (context) => const ErrorScreen()));
       }
     });
   }
 
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        color: Colors.white,
-      ),
-      margin: EdgeInsets.only(
-          top: MediaQuery.of(context).size.height * 20 / 100,
-          left: MediaQuery.of(context).size.width * 10 / 100,
-          right: MediaQuery.of(context).size.width * 10 / 100),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(
-            child: SvgPicture.asset(
-              LogoTSR_notext,
-              color: Colors.black,
-              height: MediaQuery.of(context).size.height * 50 / 100,
-              width: MediaQuery.of(context).size.width * 60 / 100,
+    return Scaffold(
+      extendBody: true,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+        ),
+        margin: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height * 20 / 100,
+            left: MediaQuery.of(context).size.width * 10 / 100,
+            right: MediaQuery.of(context).size.width * 10 / 100),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+              child: SvgPicture.asset(
+                LogoTSR_notext,
+                color: Colors.black,
+                height: MediaQuery.of(context).size.height * 50 / 100,
+                width: MediaQuery.of(context).size.width * 60 / 100,
+              ),
             ),
-          ),
-          Center(child: AutoSizeText("TENSORACT", style: boldPCTextStylebl,minFontSize: 12,maxLines: 1,)),
-          Padding(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 10 / 100),
-          ),
-          Center(
-            child: const SpinKitWave(
-              type: SpinKitWaveType.start,
-              itemCount: 5,
-              color: Colors.black,
-              size: 60,
-              duration: const Duration(milliseconds: 3000),
+            Center(
+                child: AutoSizeText(
+              "TENSORACT",
+              style: boldPCTextStylebl,
+              minFontSize: 12,
+              maxLines: 1,
+            )),
+            Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height * 10 / 100),
             ),
-          )
-        ],
+            const Center(
+              child: SpinKitWave(
+                type: SpinKitWaveType.start,
+                itemCount: 5,
+                color: Colors.black,
+                size: 60,
+                duration: Duration(milliseconds: 3000),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

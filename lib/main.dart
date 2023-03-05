@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'dart:async';
-import 'package:tsr_lsp/home_screen.dart';
-import 'package:tsr_lsp/style.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:vector_graphics/vector_graphics.dart';
 import 'package:tsr_lsp/splash_screen.dart';
 import 'package:tsr_lsp/dio_get.dart';
-import 'package:dio/dio.dart';
+import 'package:tsr_lsp/disable_page_transition.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -25,6 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowMaterialGrid: false,
       title: 'Tensoract List Port Server',
       theme: ThemeData(
+        pageTransitionsTheme: NoTransitionsOnWeb(),
         applyElevationOverlayColor: true,
         fontFamily: "Roboto",
         useMaterial3: true,
