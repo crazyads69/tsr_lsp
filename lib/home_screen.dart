@@ -94,7 +94,7 @@ class _BodyScreenState extends State<BodyScreen> {
               "Port In-used List: ",
               style: mediumPCTextStylebl,
               maxLines: 1,
-              minFontSize: 10,
+              minFontSize: 7,
             ),
             SizedBox(
                 height: MediaQuery.of(context).size.height,
@@ -102,44 +102,46 @@ class _BodyScreenState extends State<BodyScreen> {
                 child: DataTable2(
                     sortAscending: true,
                     border: TableBorder.all(color: Colors.black, width: 1.0),
-                    minWidth: 375,
+                    minWidth: 800,
                     columns: [
                       DataColumn2(
                           label: Center(
                               child: AutoSizeText(
                         "Local Port",
-                        style: boldPCTextStylebl,
-                        minFontSize: 10,
+                        style: mediumPCTextStylebl,
+                        minFontSize: 7,
                         maxLines: 1,
                       ))),
                       DataColumn2(
                           label: Center(
                               child: AutoSizeText(
                         "Foreign Port",
-                        style: boldPCTextStylebl,
-                        minFontSize: 10,
+                        style: mediumPCTextStylebl,
+                        minFontSize: 7,
                         maxLines: 1,
                       ))),
                       DataColumn2(
                           label: Center(
                               child: AutoSizeText(
                         "Service",
-                        style: boldPCTextStylebl,
+                        style: mediumPCTextStylebl,
                         maxLines: 1,
-                        minFontSize: 10,
+                        minFontSize: 7,
                       ))),
                       DataColumn2(
                           label: Center(
-                              child: AutoSizeText("Protocol",
-                                  style: boldPCTextStylebl,
-                                  maxLines: 1,
-                                  minFontSize: 10))),
+                              child: AutoSizeText(
+                        "Protocol",
+                        style: mediumPCTextStylebl,
+                        maxLines: 1,
+                        minFontSize: 7,
+                      ))),
                       DataColumn2(
                           label: Center(
                               child: AutoSizeText(
                         "Status",
-                        style: boldPCTextStylebl,
-                        minFontSize: 10,
+                        style: mediumPCTextStylebl,
+                        minFontSize: 7,
                         maxLines: 1,
                       ))),
                     ],
@@ -147,41 +149,36 @@ class _BodyScreenState extends State<BodyScreen> {
                         datas.length,
                         (index) => DataRow(
                               cells: [
-                                DataCell(Center(
-                                    child: AutoSizeText(
+                                DataCell(AutoSizeText(
                                   datas[index].local_port,
-                                  style: mediumPCTextStylebl,
-                                  minFontSize: 10,
+                                  style: lightPCTextStylebl,
+                                  minFontSize: 7,
                                   maxLines: 1,
-                                ))),
-                                DataCell(Center(
-                                    child: AutoSizeText(
+                                )),
+                                DataCell(AutoSizeText(
                                   datas[index].foreign_port,
-                                  style: mediumPCTextStylebl,
-                                  minFontSize: 10,
+                                  style: lightPCTextStylebl,
+                                  minFontSize: 7,
                                   maxLines: 1,
-                                ))),
-                                DataCell(Center(
-                                    child: AutoSizeText(
+                                )),
+                                DataCell(AutoSizeText(
                                   datas[index].program_name,
-                                  style: mediumPCTextStylebl,
-                                  minFontSize: 10,
+                                  style: lightPCTextStylebl,
+                                  minFontSize: 7,
                                   maxLines: 1,
-                                ))),
-                                DataCell(Center(
-                                    child: AutoSizeText(
+                                )),
+                                DataCell(AutoSizeText(
                                   datas[index].proto,
-                                  style: mediumPCTextStylebl,
-                                  minFontSize: 10,
+                                  style: lightPCTextStylebl,
+                                  minFontSize: 7,
                                   maxLines: 1,
-                                ))),
-                                DataCell(Center(
-                                    child: AutoSizeText(
+                                )),
+                                DataCell(AutoSizeText(
                                   datas[index].state,
-                                  style: mediumPCTextStylebl,
-                                  minFontSize: 10,
+                                  style: lightPCTextStylebl,
+                                  minFontSize: 7,
                                   maxLines: 1,
-                                )))
+                                ))
                               ],
                             )))),
           ],

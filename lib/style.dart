@@ -49,6 +49,19 @@ TextStyle mediumPCTextStyle = const TextStyle(
   color: Colors.white,
 );
 
+TextStyle lightMobileTextStyle = const TextStyle(
+  fontFamily: "Roboto",
+  fontWeight: FontWeight.w200,
+  fontSize: 14,
+  color: Colors.white,
+);
+
+TextStyle lightPCTextStyle = const TextStyle(
+  fontFamily: "Roboto",
+  fontWeight: FontWeight.w200,
+  fontSize: 16,
+  color: Colors.white,
+);
 //Typography black constants
 TextStyle boldMobileTextStylebl = const TextStyle(
     fontFamily: "Roboto",
@@ -81,4 +94,16 @@ TextStyle mediumPCTextStylebl = const TextStyle(
     fontFamily: "Roboto",
     fontSize: 30,
     fontStyle: FontStyle.normal,
+    color: Colors.black);
+
+TextStyle lightMobileTextStylebl = const TextStyle(
+    fontFamily: "Roboto",
+    fontWeight: FontWeight.w200,
+    fontSize: 14,
+    color: Colors.black);
+
+TextStyle lightPCTextStylebl = const TextStyle(
+    fontFamily: "Roboto",
+    fontWeight: FontWeight.w200,
+    fontSize: 16,
     color: Colors.black);
